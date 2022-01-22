@@ -1,3 +1,3 @@
 module.exports = {
-    url: "mongodb://localhost:27017/tdd_nodejs",
+    url: "mongodb+srv://isaac:Mugisha12!@cluster0.plwsu.mongodb.net/jest-testing?retryWrites=true&w=majority",
 };
