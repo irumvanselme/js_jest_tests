@@ -11,7 +11,7 @@ describe('testing create function',()=>{
 })
 
 describe('Post endpoints',()=>{
-    it('Testing creating tutorial success', async()=>{
+    it('should create tutorial successfully', async()=>{
         const res = await request(app)
         .post('/api/tutorials/')
         .send({
@@ -20,5 +20,16 @@ describe('Post endpoints',()=>{
             published: true
         })
         expect(res.statusCode).toEqual(201)  
+    })
+    it('should not create tutorial if title is missing', async()=>{
+        const res = await request(app)
+        .post('/api/tutorials/')
+        .send({
+            title: '',
+            description: 'Test tutorial description',
+            published: true
+        })
+        expect(res.statusCode).toEqual(400) 
+        expect(res.body.message).toEqual("Title can not be empty!")
     })
 })
