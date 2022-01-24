@@ -2,6 +2,7 @@
 const request = require('supertest')
 const {create,findAll,update} = require('../../app/controllers/tutorial.controller');
 const app = require('../../app')
+const Tutorial = require('../../app/models/tutorial.model');
 
 
 describe('testing findAll function',()=>{
@@ -33,3 +34,29 @@ describe('Post endpoints',()=>{
         expect(res.body.message).toEqual("Title can not be empty!")
     })
 })
+
+describe('Delete endpoints', ()=>{
+    it('should delete one tutorial successfully', async()=>{
+        const res = await request(app)
+        .post('/api/tutorials/')
+        .send({
+            title: 'Test tutorial',
+            description: 'Test tutorial description',
+            published: true
+        })
+        const id = res.body.id;
+        const response = await request(app)
+                .delete('/api/tutorials/' + id)
+        expect(response.statusCode).toEqual(201);
+        expect(response.body.message).toEqual("Tutorial was deleted successfully!")
+    
+    })
+
+    it('should delete all tutorials successfully', async()=>{
+        const response = await request(app)
+        .delete('/api/tutorials/')
+    })
+})
+
+
+

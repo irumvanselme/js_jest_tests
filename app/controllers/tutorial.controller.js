@@ -106,7 +106,7 @@ exports.delete = (req, res) => {
                     message: `Cannot delete Tutorial with id=${id}. Maybe Tutorial was not found!`,
                 });
             } else {
-                res.send({
+                res.status(201).send({
                     message: "Tutorial was deleted successfully!",
                 });
             }
