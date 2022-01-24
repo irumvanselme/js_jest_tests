@@ -60,5 +60,23 @@ describe('Delete endpoints', ()=>{
     })
 })
 
+describe('GET endpoints',()=>{
+    it('should return tutorial by id successfully', async()=>{
+        const res = await request(app)
+        .post('/api/tutorials/')
+        .send({
+            title: 'Test tutorial',
+            description: 'Test tutorial description',
+            published: true
+        })
+        const id = res.body.id;
+        const response = await request(app)
+                .get('/api/tutorials/' + id)
+        expect(response.statusCode).toEqual(200)
+        expect(response.body.title).toEqual('Test tutorial')
+    })
+})
+
+
 
 
