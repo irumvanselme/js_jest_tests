@@ -47,7 +47,7 @@ describe('Delete endpoints', ()=>{
         const id = res.body.id;
         const response = await request(app)
                 .delete('/api/tutorials/' + id)
-        expect(response.statusCode).toEqual(201);
+        expect(response.statusCode).toEqual(200);
         expect(response.body.message).toEqual("Tutorial was deleted successfully!")
     
     })
@@ -55,6 +55,8 @@ describe('Delete endpoints', ()=>{
     it('should delete all tutorials successfully', async()=>{
         const response = await request(app)
         .delete('/api/tutorials/')
+        expect(response.statusCode).toEqual(200);
+        expect(response.body.message).toEqual("Tutorials were deleted successfully!")
     })
 })
 
