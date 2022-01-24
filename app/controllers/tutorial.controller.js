@@ -106,7 +106,7 @@ exports.delete = (req, res) => {
                     message: `Cannot delete Tutorial with id=${id}. Maybe Tutorial was not found!`,
                 });
             } else {
-                res.status(201).send({
+                res.send({
                     message: "Tutorial was deleted successfully!",
                 });
             }
@@ -123,7 +123,7 @@ exports.deleteAll = (req, res) => {
     Tutorial.deleteMany({})
         .then((data) => {
             res.send({
-                message: `${data.deletedCount} Tutorials were deleted successfully!`,
+                message: "Tutorials were deleted successfully!",
             });
         })
         .catch((err) => {
