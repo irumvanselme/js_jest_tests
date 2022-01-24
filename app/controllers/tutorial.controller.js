@@ -5,7 +5,7 @@ const Tutorial = db.tutorials;
 exports.create = (req, res) => {
     // Validate request
     if (!req.body.title) {
-        res.status(400).send({ message: "Content can not be empty!" });
+        res.status(400).send({ message: "Title can not be empty!" });
         return;
     }
 
@@ -20,7 +20,7 @@ exports.create = (req, res) => {
     tutorial
         .save(tutorial)
         .then((data) => {
-            res.send(data);
+            res.status(201).send(data);
         })
         .catch((err) => {
             res.status(500).send({
