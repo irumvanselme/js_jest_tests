@@ -40,10 +40,17 @@ exports.findAll = (req, res) => {
 
     Tutorial.find(condition)
         .then((data) => {
-            res.send(data);
+            
+            if(data.length >0){
+               res.status(200).send(data);
+            }
+            else{
+                res.status(404).send('Not Found');
+            }
         })
         .catch((err) => {
-            res.status(500).send({
+            // console.log('error, '+JSON.stringify(err))
+            res.status(500).json({
                 message:
                     err.message ||
                     "Some error occurred while retrieving tutorials.",
@@ -84,7 +91,7 @@ exports.update = (req, res) => {
         .then((data) => {
             if (!data) {
                 res.status(404).send({
-                    message: `Cannot update Tutorial with id=${id}. Maybe Tutorial was not found!`,
+                    message: 'Not Found',
                 });
             } else res.send({ message: "Tutorial was updated successfully." });
         })
