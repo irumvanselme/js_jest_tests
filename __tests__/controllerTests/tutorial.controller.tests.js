@@ -78,23 +78,16 @@ describe("Put endpoint", () => {
   });
 });
 describe("Post endpoints", () => {
-  let data = {
-    _id: "4882200e85ytteeetii999",
-    title: "ionic",
-    description: "mobile development",
-    published: true,
-  };
-
-  let tuto = new Tutorial(data);
-
   it("should create tutorial successfully", async () => {
-    jest.spyOn(tuto, "save").mockReturnValue(Promise.resolve(data));
+    jest.spyOn(Tutorial, "create").mockReturnValue(Promise.resolve(true));
+
     const res = await request(app).post("/api/tutorials/").send({
       title: "Test tutorial",
       description: "Test tutorial description",
       published: true,
     });
-    expect(res.statusCode).to.equal(500);
+
+    expect(res.statusCode).to.equal(201);
   });
   it("should not create tutorial if title is missing", async () => {
     const res = await request(app).post("/api/tutorials/").send({
@@ -118,6 +111,9 @@ describe("Delete endpoints", () => {
       description: "Test tutorial description",
       published: true,
     });
+
+    console.log(res);
+
     const id = res.body.id;
     const response = await request(app).delete("/api/tutorials/" + id);
     expect(response.statusCode).to.equal(200);
