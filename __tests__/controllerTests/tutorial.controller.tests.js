@@ -12,7 +12,7 @@ const {expect} = chai;
 const app = require('../../app');
 
 chai.use(http);
-describe('Testing findAll controller',()=>{
+describe('Get endpoint',()=>{
    let data = [
        {
            _id:'4882200e85yytii999',
@@ -47,7 +47,7 @@ describe('Testing findAll controller',()=>{
     })
 })
 
-describe('Testing update controller',()=>{
+describe('Put endpoint',()=>{
     let firstTurtorial = {
         _id:'4665ytuugi86886000',
         title:'react native',
