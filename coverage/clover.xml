@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <coverage generated="1643091774155" clover="3.2.0">
   <project timestamp="1643091774155" name="All files">
     <metrics statements="92" coveredstatements="58" conditionals="24" coveredconditionals="6" methods="27" coveredmethods="7" elements="143" coveredelements="71" complexity="0" loc="92" ncloc="92" packages="5" files="6" classes="6"/>
     <package name="js_jest_tests">
       <metrics statements="15" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
       <file name="app.js" path="C:\Users\Pc\Documents\courses\Devops\js_jest_tests\app.js">
+=======
+<coverage generated="1643054320558" clover="3.2.0">
+  <project timestamp="1643054320558" name="All files">
+    <metrics statements="90" coveredstatements="65" conditionals="22" coveredconditionals="5" methods="27" coveredmethods="12" elements="139" coveredelements="82" complexity="0" loc="90" ncloc="90" packages="5" files="6" classes="6"/>
+    <package name="js_jest_tests">
+      <metrics statements="15" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <file name="app.js" path="C:\Users\hp\Documents\Studies\year 3\Devops\js_jest_tests\app.js">
+>>>>>>> 662de8afda4d2b622d348684b16f9c0b268fcefa
         <metrics statements="15" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -25,12 +34,17 @@
     </package>
     <package name="js_jest_tests.app.config">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+<<<<<<< HEAD
       <file name="db.config.js" path="C:\Users\Pc\Documents\courses\Devops\js_jest_tests\app\config\db.config.js">
+=======
+      <file name="db.config.js" path="C:\Users\hp\Documents\Studies\year 3\Devops\js_jest_tests\app\config\db.config.js">
+>>>>>>> 662de8afda4d2b622d348684b16f9c0b268fcefa
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
       </file>
     </package>
     <package name="js_jest_tests.app.controllers">
+<<<<<<< HEAD
       <metrics statements="49" coveredstatements="21" conditionals="24" coveredconditionals="6" methods="21" coveredmethods="4"/>
       <file name="tutorial.controller.js" path="C:\Users\Pc\Documents\courses\Devops\js_jest_tests\app\controllers\tutorial.controller.js">
         <metrics statements="49" coveredstatements="21" conditionals="24" coveredconditionals="6" methods="21" coveredmethods="4"/>
@@ -88,6 +102,63 @@
     <package name="js_jest_tests.app.models">
       <metrics statements="16" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
       <file name="index.js" path="C:\Users\Pc\Documents\courses\Devops\js_jest_tests\app\models\index.js">
+=======
+      <metrics statements="47" coveredstatements="25" conditionals="22" coveredconditionals="5" methods="21" coveredmethods="8"/>
+      <file name="tutorial.controller.js" path="C:\Users\hp\Documents\Studies\year 3\Devops\js_jest_tests\app\controllers\tutorial.controller.js">
+        <metrics statements="47" coveredstatements="25" conditionals="22" coveredconditionals="5" methods="21" coveredmethods="8"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="60" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="75" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="85" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="89" count="0" type="stmt"/>
+        <line num="92" count="0" type="stmt"/>
+        <line num="99" count="1" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="102" count="1" type="stmt"/>
+        <line num="104" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="105" count="0" type="stmt"/>
+        <line num="109" count="1" type="stmt"/>
+        <line num="115" count="0" type="stmt"/>
+        <line num="122" count="1" type="stmt"/>
+        <line num="123" count="1" type="stmt"/>
+        <line num="125" count="1" type="stmt"/>
+        <line num="130" count="0" type="stmt"/>
+        <line num="139" count="1" type="stmt"/>
+        <line num="140" count="0" type="stmt"/>
+        <line num="142" count="0" type="stmt"/>
+        <line num="145" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="js_jest_tests.app.models">
+      <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="index.js" path="C:\Users\hp\Documents\Studies\year 3\Devops\js_jest_tests\app\models\index.js">
+>>>>>>> 662de8afda4d2b622d348684b16f9c0b268fcefa
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -98,6 +169,7 @@
         <line num="9" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
       </file>
+<<<<<<< HEAD
       <file name="tutorial.model.js" path="C:\Users\Pc\Documents\courses\Devops\js_jest_tests\app\models\tutorial.model.js">
         <metrics statements="8" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -106,13 +178,27 @@
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
+=======
+      <file name="tutorial.model.js" path="C:\Users\hp\Documents\Studies\year 3\Devops\js_jest_tests\app\models\tutorial.model.js">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+>>>>>>> 662de8afda4d2b622d348684b16f9c0b268fcefa
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
       </file>
     </package>
     <package name="js_jest_tests.app.routes">
       <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+<<<<<<< HEAD
       <file name="turorial.routes.js" path="C:\Users\Pc\Documents\courses\Devops\js_jest_tests\app\routes\turorial.routes.js">
+=======
+      <file name="turorial.routes.js" path="C:\Users\hp\Documents\Studies\year 3\Devops\js_jest_tests\app\routes\turorial.routes.js">
+>>>>>>> 662de8afda4d2b622d348684b16f9c0b268fcefa
         <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>

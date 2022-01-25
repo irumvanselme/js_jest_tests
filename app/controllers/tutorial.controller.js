@@ -130,7 +130,7 @@ exports.deleteAll = (req, res) => {
     Tutorial.deleteMany({})
         .then((data) => {
             res.send({
-                message: `${data.deletedCount} Tutorials were deleted successfully!`,
+                message: "Tutorials were deleted successfully!",
             });
         })
         .catch((err) => {

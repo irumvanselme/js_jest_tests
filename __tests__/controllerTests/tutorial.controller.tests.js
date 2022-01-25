@@ -77,3 +77,72 @@ describe('Testing update controller',()=>{
        expect(res.body.message).to.equal('Not Found');
    })
 })
+describe('Post endpoints',()=>{
+    it('should create tutorial successfully', async()=>{
+        const res = await request(app)
+        .post('/api/tutorials/')
+        .send({
+            title: 'Test tutorial',
+            description: 'Test tutorial description',
+            published: true
+        })
+        expect(res.statusCode).toEqual(201)  
+    })
+    it('should not create tutorial if title is missing', async()=>{
+        const res = await request(app)
+        .post('/api/tutorials/')
+        .send({
+            title: '',
+            description: 'Test tutorial description',
+            published: true
+        })
+        expect(res.statusCode).toEqual(400) 
+        expect(res.body.message).toEqual("Title can not be empty!")
+    })
+})
+
+describe('Delete endpoints', ()=>{
+    it('should delete one tutorial successfully', async()=>{
+        const res = await request(app)
+        .post('/api/tutorials/')
+        .send({
+            title: 'Test tutorial',
+            description: 'Test tutorial description',
+            published: true
+        })
+        const id = res.body.id;
+        const response = await request(app)
+                .delete('/api/tutorials/' + id)
+        expect(response.statusCode).toEqual(200);
+        expect(response.body.message).toEqual("Tutorial was deleted successfully!")
+    
+    })
+
+    it('should delete all tutorials successfully', async()=>{
+        const response = await request(app)
+        .delete('/api/tutorials/')
+        expect(response.statusCode).toEqual(200);
+        expect(response.body.message).toEqual("Tutorials were deleted successfully!")
+    })
+})
+
+describe('GET endpoints',()=>{
+    it('should return tutorial by id successfully', async()=>{
+        const res = await request(app)
+        .post('/api/tutorials/')
+        .send({
+            title: 'Test tutorial',
+            description: 'Test tutorial description',
+            published: true
+        })
+        const id = res.body.id;
+        const response = await request(app)
+                .get('/api/tutorials/' + id)
+        expect(response.statusCode).toEqual(200)
+        expect(response.body.title).toEqual('Test tutorial')
+    })
+})
+
+
+
+
