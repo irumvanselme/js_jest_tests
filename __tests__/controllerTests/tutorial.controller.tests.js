@@ -1,4 +1,4 @@
-// const { Test } = require('supertest');
+
 const request = require('supertest');
 const chai  = require('chai');
 const http = require('chai-http');
@@ -48,23 +48,12 @@ describe('Get endpoint',()=>{
 })
 
 describe('Put endpoint',()=>{
-    let firstTurtorial = {
-        _id:'4665ytuugi86886000',
-        title:'react native',
-        description:'mobile development',
-        published: true
-    };
-
     let updatedTurtorial = {
         _id:'4665ytuugi86886000',
         title:'react native',
         description:'mobile development',
         published: false
     }
-
-    // test('should pass if update exists',()=>{
-    //     expect(update).not.to.undefined();
-    // })
 
    test('should return 201 if the turtorial is updated',async()=>{
       jest.spyOn(Tutorial,'findByIdAndUpdate').mockReturnValue(Promise.resolve(updatedTurtorial));
