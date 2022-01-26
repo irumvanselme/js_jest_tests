@@ -5,7 +5,7 @@
     "main": "server.js",
     "scripts": {
         "dev": "nodemon server.js",
-        "test": "jest --detectOpenHandles --testTimeout=30000 --coverage"
+        "test": "jest --coverage"
     },
     "keywords": [
         "nodejs",

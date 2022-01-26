@@ -1,20 +1,15 @@
 const request = require("supertest");
 const chai = require("chai");
 const http = require("chai-http");
-const {
-    create,
-    findAll,
-    update,
-} = require("../app/controllers/tutorial.controller");
-const mongoose = require("mongoose");
+
+const { expect } = chai;
+
 const db = require("../app/models");
 const Tutorial = db.tutorials;
-const { Request } = require("jest-express/lib/request");
-const { Response } = require("jest-express/lib/response");
-const { expect } = chai;
 const app = require("../app");
 
 chai.use(http);
+
 describe("Get endpoint", () => {
     let data = [
         {
@@ -35,7 +30,6 @@ describe("Get endpoint", () => {
         jest.spyOn(Tutorial, "find").mockReturnValue(Promise.resolve(data));
         const res = await chai.request(app).get("/api/tutorials");
         expect(res.status).to.equal(200);
-        await mongoose.disconnect();
     });
 
     test("should return title at index 0 of the body returned", async () => {
@@ -111,8 +105,6 @@ describe("Delete endpoints", () => {
             description: "Test tutorial description",
             published: true,
         });
-
-        console.log(res);
 
         const id = res.body.id;
         const response = await request(app).delete("/api/tutorials/" + id);
