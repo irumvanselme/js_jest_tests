@@ -5,14 +5,14 @@ const {
     create,
     findAll,
     update,
-} = require("../../app/controllers/tutorial.controller");
+} = require("../app/controllers/tutorial.controller");
 const mongoose = require("mongoose");
-const db = require("../../app/models");
+const db = require("../app/models");
 const Tutorial = db.tutorials;
 const { Request } = require("jest-express/lib/request");
 const { Response } = require("jest-express/lib/response");
 const { expect } = chai;
-const app = require("../../app");
+const app = require("../app");
 
 chai.use(http);
 describe("Get endpoint", () => {
