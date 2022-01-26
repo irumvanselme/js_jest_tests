@@ -12,6 +12,13 @@ const { mongoose } = require("../app/models");
 chai.use(http);
 
 describe("Tutorial endpoint", () => {
+    let updatedTurtorial = {
+        _id: "4665ytuugi86886000",
+        title: "react native",
+        description: "mobile development",
+        published: false,
+    };
+
     let data = [
         {
             _id: "4882200e85yytii999",
@@ -41,6 +48,7 @@ describe("Tutorial endpoint", () => {
         const res = await chai.request(app).get("/api/tutorials");
         expect(res.body[0].title).to.equal("react native");
     });
+
     test("GET /api/tutorials --> should return 404 if there is no empty data", async () => {
         jest.spyOn(Tutorial, "find").mockReturnValue(Promise.resolve(emptyArr));
         const res = await chai.request(app).get("/api/tutorials");
@@ -62,13 +70,6 @@ describe("Tutorial endpoint", () => {
         expect(response.body.title).to.equal("Test native");
     });
 
-    let updatedTurtorial = {
-        _id: "4665ytuugi86886000",
-        title: "react native",
-        description: "mobile development",
-        published: false,
-    };
-
     test("PUT /api/tutorials/:id -->should return 201 if the turtorial is updated", async () => {
         jest.spyOn(Tutorial, "findByIdAndUpdate").mockReturnValue(
             Promise.resolve(updatedTurtorial)
@@ -78,6 +79,7 @@ describe("Tutorial endpoint", () => {
             .put("/api/tutorials/:4665ytuugi86886000");
         expect(res.body.message).to.equal("Tutorial was updated successfully.");
     });
+
     test("PUT /api/tutorials/:id --> should return 404 if no data was given", async () => {
         jest.spyOn(Tutorial, "findByIdAndUpdate").mockReturnValue(
             Promise.resolve(null)
@@ -99,6 +101,7 @@ describe("Tutorial endpoint", () => {
 
         expect(res.statusCode).to.equal(201);
     });
+
     it("POST /api/tutorials --> should not create tutorial if title is missing", async () => {
         const res = await request(app).post("/api/tutorials/").send({
             title: "",
